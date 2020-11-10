@@ -1,0 +1,17 @@
+[Unit]
+Description=abci_geth
+After=network-online.target
+
+[Service]
+User=marlin
+ExecStart=/home/marlin/marlin/abci_geth.sh
+StandardOutput=journal
+StandardError=journal
+Restart=always
+RestartSec=3
+StartLimitInterval=0
+LimitNOFILE=65536
+LimitNPROC=65536
+
+[Install]
+WantedBy=multi-user.target
